@@ -12,7 +12,7 @@
 		{ asset:'TRX', img:'https://app.venus.io/assets/trx-025f5595.svg', total_supply:'1.90M TRX', supply_apy:'11.06%', total_borrow:'11.91M TRX', borrow_apy:'2.00%', liquidity:'18.30M TRX', price:'$10.817338'},
 	];
 
-    let core_pool_info = { total_supply: '2.64B', total_borrow: '1.01B', available_liquidity: '1.63B', assets: '30' };
+    let core_pool_info = { total_supply: '$2.64B', total_borrow: '$1.01B', available_liquidity: '$1.63B', assets: '30' };
 </script>
 
 
