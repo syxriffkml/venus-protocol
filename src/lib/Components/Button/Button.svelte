@@ -52,6 +52,20 @@
     }
 
     .side.active {
-        @apply text-[#f5ece6] py-2 px-4 bg-transparent bg-[#2d3549];
+        @apply text-[#f5ece6] py-2 px-4 bg-transparent bg-[#2d3549] relative;
+    }
+
+    @media (min-width: 1280px) {
+        .side.active::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            left: 0;
+            top: 0;
+            background: #3a78ff;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
     }
 </style>
