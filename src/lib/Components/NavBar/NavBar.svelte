@@ -34,7 +34,7 @@
     });
 </script>
 
-<div class="flex flex-row justify-between p-4 h-[85px] md:h-[112px] backdrop-blur-md bg-transparent sticky top-0 z-10">
+<div class="flex flex-row justify-between p-4 md:pl-8 h-[85px] md:h-[112px] backdrop-blur-md bg-transparent sticky top-0 z-10">
 
     <!--Mobile View-->
     <div class="md:hidden flex items-center justify-center h-full">
