@@ -17,6 +17,7 @@
 
 <div class="h-auto w-full flex flex-col xl:max-w-[90rem] items-start mx-auto px-8 gap-y-6 mb-4">
 	
+    <!--Desktop Card-->
 	<Card customClass="!border-none !rounded-2xl hidden lg:block">
         <div class="flex flex-row items-center gap-x-16">
             <div class="flex flex-col gap-y-2">
@@ -41,6 +42,7 @@
         </div>  
 	</Card>
 
+    <!--Mobile Card-->
     <div class="lg:hidden flex flex-col sm:flex-row items-center gap-x-4 gap-y-2 h-full w-full">
         <Card customClass="!border-none !rounded-2xl">
             <p class="text-[#98abca] text-md font-semibold">Total Supply</p>
