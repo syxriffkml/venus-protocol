@@ -7,6 +7,7 @@
     import { initializeStores } from '@skeletonlabs/skeleton';
 
     import SideBar from '$lib/Components/SideBar/SideBar.svelte';
+    import { currentTabName } from "$lib/headerStore";
 
     initializeStores();
     const drawerStore = getDrawerStore();
@@ -25,12 +26,26 @@
 		rounded: 'rounded-none',
 		position: 'left'
 	};
+
+
+    let page_name: string;
+    currentTabName.subscribe(value => {
+        page_name = value;
+    });
 </script>
 
-<div class="flex flex-row justify-between p-4 h-[112px] backdrop-blur-md bg-transparent sticky top-0 z-10">
+<div class="flex flex-row justify-between p-4 h-[85px] md:h-[112px] backdrop-blur-md bg-transparent sticky top-0 z-10">
+
+    <!--Mobile View-->
+    <div class="md:hidden flex items-center justify-center h-full">
+        <img src="https://app.venus.io/assets/venusLogo-ccf6fbc9.svg" alt="Venus logo" >
+    </div>
+    <!--End of Mobile View-->
+
+
     <!--Desktop View-->
     <div class="hidden md:flex items-center justify-center">
-        <p class="text-xl font-bold">Dashboard</p>
+        <p class="text-xl font-bold">{page_name}</p>
     </div>
 
     <div class="flex flex-row items-center gap-x-2">
@@ -48,13 +63,10 @@
     <!--End of Desktop View-->
 
 
-
-
     <!--Mobile View-->
     <button class="flex md:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg z-[1]" on:click={(()=>{ drawerStore.open(drawerSettings); })}>
         <Icon icon="solar:hamburger-menu-linear" class="w-8 h-8"/>
     </button>
-
     <!--End of Mobile View-->
 </div>
 

@@ -2,6 +2,8 @@
 
     import Button from "../Button/Button.svelte";
     import * as sidebar_svg from "../SVG/sidebar_svg";
+    import { onMount } from 'svelte';
+    import { currentTabName } from "$lib/headerStore";
 
     let tabs = [
         {name: 'Dashboard', icon: sidebar_svg.dashboard, href: '/'},
@@ -26,6 +28,16 @@
         currentPage = window.location.pathname;
     }
 
+
+    onMount(() => {
+        const currentTab = tabs.find(tab => tab.href === currentPage);
+        if (currentTab) {
+            currentTabName.set(currentTab.name);
+        } else {
+            console.log("Current page:", currentPage, "No matching tab found");
+        }
+    });
+
 </script>
 
 <div use:setCurrentPage class="bg-[#1e2431] h-full flex flex-col gap-y-12">
@@ -49,9 +61,5 @@
                 </div>
             </Button>
         {/each}
-    </div>
-
-    
-
-    
+    </div>    
 </div>
