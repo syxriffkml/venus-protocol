@@ -91,7 +91,7 @@
 			</thead>
 			<tbody class="!bg-[#1e2431]">
 				{#each core_pool as row, i}
-					<tr>
+					<tr class="!bg-[#1e2431]">
 						<td class="flex flex-row items-center gap-x-2">
 							<img src={row.img} alt={row.asset} class="w-5 h-5">
 							{row.asset}
