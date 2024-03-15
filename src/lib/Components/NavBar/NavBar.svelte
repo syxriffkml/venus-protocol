@@ -34,7 +34,7 @@
     });
 </script>
 
-<div class="flex flex-row justify-between p-4 md:pl-8 h-[85px] md:h-[112px] backdrop-blur-md bg-transparent sticky top-0 z-10">
+<div class="flex flex-row justify-between p-1 sm:py-4 sm:px-8 h-[85px] md:h-[112px] backdrop-blur-md bg-transparent sticky top-0 z-10">
 
     <!--Mobile View-->
     <div class="md:hidden flex items-center justify-center h-full">
@@ -50,7 +50,7 @@
 
     <div class="flex flex-row items-center gap-x-2">
 
-        <button class="w-auto lg:w-[200px] h-[48px] bg-[#1e2431] hover:bg-[#2d3549] py-2 px-4 rounded-lg flex flex-row items-center justify-between border border-gray-700 gap-x-2 lg:gap-x-0">
+        <button class="w-auto lg:w-[200px] h-auto sm:h-[48px] bg-[#1e2431] hover:bg-[#2d3549] py-2 px-4 rounded-lg flex flex-row items-center justify-between border border-gray-700 gap-x-2 lg:gap-x-0">
             <div class="flex flex-row items-center gap-x-2">
                 <img src="https://app.venus.io/assets/bnb-8cd7030f.svg" alt="img" class="h-5 w-5">
                 <p class="text-sm font-semibold hidden lg:inline">BNB Chain</p>
@@ -58,13 +58,13 @@
             <Icon icon="mingcute:down-line" class="h-5 w-5"/>
         </button>
         
-        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-[48px]" handler={(event) => {  }}>Connect Wallet</Button>
+        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-auto sm:h-[48px]" handler={(event) => {  }}>Connect Wallet</Button>
     </div>
     <!--End of Desktop View-->
 
 
     <!--Mobile View-->
-    <button class="flex md:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg z-[1]" on:click={(()=>{ drawerStore.open(drawerSettings); })}>
+    <button class="flex md:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg z-[1] h-auto sm:h-[48px]" on:click={(()=>{ drawerStore.open(drawerSettings); })}>
         <Icon icon="solar:hamburger-menu-linear" class="w-8 h-8"/>
     </button>
     <!--End of Mobile View-->

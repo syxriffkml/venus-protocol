@@ -68,7 +68,7 @@
 
 	
 	<!-- Table -->
-	<div class="table-container">
+	<div class="table-container !rounded-2xl">
 		<!-- Native Table Element -->
 		<table class="table !bg-[#1e2431]">
 			<thead class="!bg-[#1e2431]">
