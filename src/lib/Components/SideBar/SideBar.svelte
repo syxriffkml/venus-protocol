@@ -48,7 +48,6 @@
     </button>
 
     <div class="w-full h-full overflow-y-scroll flex flex-col items-center xl:flex-none">
-
         {#each tabs as tab(tab.href)}
             <Button 
                 width="w-[55px] xl:w-full" mode="side" rounded="rounded-xl xl:rounded-none" 
@@ -57,9 +56,10 @@
             >
                 <div class="flex flex-row items-center justify-center xl:justify-normal pl-0 xl:pl-4">
                     {@html tab.icon}
-                    <p class="hidden xl:inline">{tab.name}</p>
+                    <p class="hidden xl:inline font-medium">{tab.name}</p>
                 </div>
             </Button>
         {/each}
-    </div>    
+    </div>   
+     
 </div>

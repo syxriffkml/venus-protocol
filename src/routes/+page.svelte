@@ -26,13 +26,10 @@
             item.asset.toLowerCase().includes(searchQuery.toLowerCase())
         );
     }
-	
-
 </script>
 
 
 <div class="h-auto w-full flex flex-col xl:max-w-[90rem] items-start mx-auto px-8 gap-y-6 mb-4">
-	
 	<Card customClass="h-auto sm:h-[194px] !p-0">
 		<div class="flex flex-col sm:flex-row justify-between overflow-hidden h-full">
 			<div class="order-2 sm:order-1 w-full p-6 flex flex-col sm:justify-between justify-center items-center sm:items-start">
@@ -73,8 +70,8 @@
 	<!-- Table -->
 	<div class="table-container">
 		<!-- Native Table Element -->
-		<table class="table !bg-[#aeecff]/5">
-			<thead class="!bg-[#aeecff]/5">
+		<table class="table !bg-[#1e2431]">
+			<thead class="!bg-[#1e2431]">
 				<tr>
 					<th>Asset</th>
 					<th class="text-right">Pool</th>
@@ -84,7 +81,7 @@
 					<th class="text-right">Liquidity</th>
 				</tr>
 			</thead>
-			<tbody class="!bg-[#aeecff]/5">
+			<tbody class="!bg-[#1e2431]">
 				{#each filteredDashboard as row, i}
 					<tr>
 						<td class="flex flex-row items-center gap-x-2">

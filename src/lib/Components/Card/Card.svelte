@@ -5,7 +5,7 @@
 </script>
 
 <!-- prettier-ignore -->
-<div class="border border-gray-700 bg-[#aeecff]/5 p-6 rounded-lg {width} {customClass}
+<div class="border border-gray-700 bg-[#1e2431] p-6 rounded-lg {width} {customClass}
     { animate === 'floating' ? 'floating' : 
       animate === 'floating-shadow' ? 'floating-shadow' : 
       animate === 'floating-none' ? 'floating-none' : ''}" 
