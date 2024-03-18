@@ -71,7 +71,7 @@
                     <tr class="!bg-[#1e2431]">
 						<td class="text-left flex flex-row items-center gap-x-2">
 							<img src={row.img} alt="Type"class="w-5 h-5">
-							{row.type}
+							<p class="translate-y-[-1px]">{row.type}</p>
 						</td>
 						<td class="text-left">
                             <a href="https://bscscan.com/tx/{row.hash}" target="_blank" class="text-[#257bcb] font-semibold">
