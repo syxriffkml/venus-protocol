@@ -35,7 +35,9 @@
 >
     <!--Dropdown Button Display-->
     <div class="flex flex-row items-center gap-x-2">
-        <img src={imgSelect} alt="img" class="h-5 w-5">
+        {#if imgSelect}
+            <img src={imgSelect} alt="img" class="h-5 w-5">
+        {/if}        
         <p class="text-sm font-semibold inline">{headSelect}</p>
     </div>
     <div class="{showCombo? '-rotate-180' : ''} !transition-all duration-1000">
