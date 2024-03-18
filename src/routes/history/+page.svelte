@@ -18,32 +18,41 @@
         { type:'Redeem', img:'https://app.venus.io/assets/usdt-68774da1.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
 	];
 
+    let selectedType = 'All';
+    let historyType = ['All', ...new Set(history.map(item => item.type))];
+
+    function selectType(type: any) {
+        selectedType = type;
+    }
+
 </script>
 
 
-<div class="h-auto w-full flex flex-col xl:max-w-[90rem] items-start mx-auto px-8 gap-y-6 mb-4">
+<div class="h-auto w-full flex flex-col xl:max-w-[90rem] items-start mx-auto px-8  mb-4">
+
+    <!--Filters(Checkbox & Dropdown)-->
+    <div class="p-4 w-full flex flex-row  justify-between bg-[#1e2431] rounded-t-2xl">
+        <label class="flex items-center space-x-2">
+            <input class="checkbox" type="checkbox" />
+            <p class="text-[#8fa5c6] text-sm">My transactions</p>
+        </label>
+        
+        <div class="flex flex-row items-center gap-x-4 relative">
+            <p class="text-[#8fa5c6] text-sm font-medium">Type</p>
+            <ComboBox headSelect={selectedType}>
+                {#each historyType as ht}
+                    <button class="flex justify-start items-center gap-x-2 p-2 z-20 w-full hover:bg-[#2d3549]"  on:click={(()=>{ selectType(ht) })} >
+                        <div>
+                            {ht}
+                        </div>
+                    </button>
+                {/each}
+            </ComboBox>
+        </div>
+    </div>
 	
 	<!-- Table -->
-	<div class="table-container !rounded-2xl">
-
-        <!--Filters(Checkbox & Dropdown)-->
-        <div class="p-4 w-full flex flex-row  justify-between !bg-[#1e2431]">
-            <label class="flex items-center space-x-2">
-                <input class="checkbox" type="checkbox" />
-                <p class="text-[#8fa5c6] text-sm">My transactions</p>
-            </label>
-            
-            <div class="flex flex-row items-center gap-x-4 relative">
-                <p class="text-[#8fa5c6] text-sm font-medium">Type</p>
-                <ComboBox headSelect="All">
-                    <div class="z-[99999] p-2">
-                        d
-                    </div>
-                </ComboBox>
-            </div>
-        </div>
-
-
+	<div class="table-container !rounded-b-2xl !rounded-t-none -translate-y-0.5">
 		<!-- Native Table Element -->
 		<table class="table !bg-[#1e2431] !rounded-t-none">
 			<thead class="!bg-[#1e2431]">
@@ -58,8 +67,8 @@
 				</tr>
 			</thead>
 			<tbody class="!bg-[#1e2431]">
-				{#each history as row, i}
-					<tr class="!bg-[#1e2431]">
+                {#each history.filter(item => selectedType === 'All' || item.type === selectedType) as row}
+                    <tr class="!bg-[#1e2431]">
 						<td class="text-left flex flex-row items-center gap-x-2">
 							<img src={row.img} alt="Type"class="w-5 h-5">
 							{row.type}
