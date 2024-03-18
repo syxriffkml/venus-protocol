@@ -27,7 +27,7 @@
 
 <div class="h-auto w-full flex flex-col xl:flex-row xl:max-w-[90rem] items-start mx-auto px-8 gap-6 mb-4">
 	
-    <Card customClass="!border-none">
+    <Card customClass="!border-none !rounded-2xl">
         <div class="flex flex-col gap-y-6">
             <div class="flex flex-row items-center gap-x-2">
                 <img src={vaults[0].img} alt="img">
@@ -70,7 +70,7 @@
         </div>
     </Card>
 
-    <Card customClass="!border-none">
+    <Card customClass="!border-none !rounded-2xl">
         <div class="flex flex-col gap-y-6">
             <div class="flex flex-row items-center gap-x-2">
                 <img src={vaults[1].img} alt="img">
