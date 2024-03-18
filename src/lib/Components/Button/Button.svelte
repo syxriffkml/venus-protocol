@@ -43,7 +43,7 @@
 
     /* isBlueInverted class */
     .isBlueInverted{
-        @apply bg-transparent backdrop-blur-sm text-[#aeecff] py-2 px-4 border-2 border-[#aeecff] hover:scale-105 transition;
+        @apply bg-transparent backdrop-blur-sm text-white py-2 px-4 border-2 border-[#3a78ff] hover:scale-105 transition;
     }
 
     /* side classes */
