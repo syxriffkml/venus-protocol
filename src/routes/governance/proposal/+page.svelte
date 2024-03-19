@@ -88,12 +88,10 @@
                             </div>
                         {/if}
                     </div>
-                    <p class="text-[#a2acc5] text-sm">{proposal.voted}</p>
                 </div>
 
                 <p class="font-semibold text-xl">{proposal.title}</p>
 
-                <p class="text-sm"><span class="text-[#a2acc5]">Executed:</span>&nbsp; {proposal.executed}</p>
                 <a href="https://bscscan.com/tx/{proposal.address}" target="_blank" class="flex flex-row gap-x-2 items-center text-[#3a78ff] hover:underline">
                     <span class="md:hidden">{slicedAddress}</span>
                     <span class="hidden md:inline">{proposal.address}</span>
