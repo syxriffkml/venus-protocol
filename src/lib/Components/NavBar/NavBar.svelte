@@ -70,6 +70,10 @@
     <!--End of Mobile View-->
 </div>
 
+<div class="w-full px-8 pb-4 flex md:hidden">
+    <p class="text-xl font-bold">{page_name}</p>
+</div>
+
 <Drawer>
     <p>Test</p>
     <button on:click={hideDrawer}>
