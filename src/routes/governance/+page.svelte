@@ -3,18 +3,26 @@
 	import Button from '$lib/Components/Button/Button.svelte';
 	import Icon from '@iconify/svelte';
     import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
+    import { goto } from '$app/navigation';
     import { snapshot, critical, fast_track } from '$lib/Components/SVG/governance_svg'
+    import { selectedProposal } from '$lib/selectedProposal';
+
 
     let proposals = [
-        {id: '#274', info: 'Critical', voted: 'Not voted', title: 'VIP-274 Rebrand agEUR into EURA (1/2)', executed: '18 Mar 2024 6:35 PM', status: 'Executed'},
-        {id: '#273', info: 'Fast track', voted: 'Not voted', title: 'VVIP-273 Risk Parameters Adjustments (XVS Ethereum bridge limits)', executed: '18 Mar 2024 9:49 AM', status: 'Executed'},
-        {id: '#272', info: '', voted: 'Not voted', title: 'VIP-272 Bootstrap XVS liquidity for the Ethereum rewards', executed: '19 Mar 2024 3:45 AM', status: 'Executed'},
-        {id: '#271', info: '', voted: 'Not voted', title: 'VIP-271 Treasury Management', executed: '17 Mar 2024 3:25 AM', status: 'Executed'},
-        {id: '#270', info: '', voted: 'Not voted', title: 'VIP-270 Partial liquidation of the BNB bridge exploiter account', executed: '10 Mar 2024 5:32 AM', status: 'Cancelled'},
-        {id: '#269', info: '', voted: 'Not voted', title: 'VIP-269 BUSD debt mitigation', executed: '10 Mar 2024 5:32 AM', status: 'Defeated'},
+        {id: '274', info: 'Critical', voted: 'Not voted', title: 'VIP-274 Rebrand agEUR into EURA (1/2)', executed: '18 Mar 2024 6:35 PM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '273', info: 'Fast track', voted: 'Not voted', title: 'VIP-273 Risk Parameters Adjustments (XVS Ethereum bridge limits)', executed: '18 Mar 2024 9:49 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '272', info: '', voted: 'Not voted', title: 'VIP-272 Bootstrap XVS liquidity for the Ethereum rewards', executed: '19 Mar 2024 3:45 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '271', info: 'Critical', voted: 'Not voted', title: 'VIP-271 Treasury Management', executed: '17 Mar 2024 3:25 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '270', info: '', voted: 'Not voted', title: 'VIP-270 Partial liquidation of the BNB bridge exploiter account', executed: '10 Mar 2024 5:32 AM', status: 'Cancelled', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '269', info: '', voted: 'Not voted', title: 'VIP-269 BUSD debt mitigation', executed: '10 Mar 2024 5:32 AM', status: 'Defeated', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '268', info: 'Fast track', voted: 'Not voted', title: 'VIP-268 USDT debt mitigation', executed: '3 Mar 2024 8:43 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
     ];
 
 
+    function selectProposal(proposal: any) {
+        selectedProposal.set(proposal);
+        goto(`/governance/proposal/?id=${proposal.id}`);
+    }
 </script>
 
 
@@ -30,14 +38,14 @@
         </div>
 
         {#each proposals as p}
-            <button class="w-full text-left">
+            <button class="w-full text-left" on:click={() => selectProposal(p) }>
                 <Card customClass="!border-none !rounded-2xl space-y-4 !p-0" width="w-auto">
                     <div class="flex flex-col sm:flex-row w-full divide-[#293143] divide-y divide-x-[0px] sm:divide-x sm:divide-y-[0px]">
                         <div class="flex flex-col gap-y-4 w-full sm:w-[65%] p-6">
                             <div class="flex flex-row items-center justify-between w-full">
                                 <div class="flex flex-row items-center gap-x-2">
                                     <div class="rounded-lg py-1 px-2 bg-[#2d3549]">
-                                        <p class="text-sm">{p.id}</p>
+                                        <p class="text-sm">#{p.id}</p>
                                     </div>
                                     {#if p.info}
                                         <div class="rounded-lg py-1 px-2 bg-[#2d3549] flex flex-row items-center gap-x-1">
@@ -96,8 +104,8 @@
         <Card customClass="!border-none !rounded-2xl space-y-4" width="w-auto">
             <div class="flex flex-col items-start gap-y-3">
                 <p class="font-semibold">To vote you should:</p>
-                <p class="text-sm">1.&nbsp;<a href="/" target="_blank" class="text-[#3a78ff]">Deposit your tokens</a>&nbsp;in the XVS Vault</p>
-                <p class="text-sm">2.&nbsp;<a href="/" target="_blank" class="text-[#3a78ff]">Delegate your voting power</a>&nbsp;to yourself or somebody else</p>
+                <p class="text-sm">1.&nbsp;<a href="/" target="_blank" class="text-[#3a78ff] hover:underline">Deposit your tokens</a>&nbsp;in the XVS Vault</p>
+                <p class="text-sm">2.&nbsp;<a href="/" target="_blank" class="text-[#3a78ff] hover:underline">Delegate your voting power</a>&nbsp;to yourself or somebody else</p>
 
             </div>
         </Card>
