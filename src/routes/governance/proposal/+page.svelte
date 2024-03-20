@@ -137,7 +137,7 @@
                     <p class="text-sm text-[#a2acc5]">For</p>
                     <p class="text-white">453.0013K</p>
                 </div>
-                <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#C6F3AF]/30" value={100} max={100} />
+                <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#2d3549]" value={100} max={100} />
 
                 <div class="grid grid-cols-2 w-full mt-8">
                     <p class="text-left">{forData.length} address</p>
@@ -163,7 +163,7 @@
                     <p class="text-sm text-[#a2acc5]">Againts</p>
                     <p class="text-white">453.0013K</p>
                 </div>
-                <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#C6F3AF]/30" value={35} max={100} />
+                <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#2d3549]" value={35} max={100} />
 
                 <div class="grid grid-cols-2 w-full mt-8">
                     <p class="text-left">{againstData.length} address</p>
@@ -189,7 +189,7 @@
                     <p class="text-sm text-[#a2acc5]">Abstain</p>
                     <p class="text-white">453.0013K</p>
                 </div>
-                <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#C6F3AF]/30" value={0} max={100} />
+                <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#2d3549]" value={0} max={100} />
 
                 <div class="grid grid-cols-2 w-full mt-8">
                     <p class="text-left">{abstainData.length} address</p>
