@@ -36,7 +36,7 @@
     let drawerOpen: boolean = false;
 </script>
 
-<div class="flex flex-row items-center justify-between px-4 sm:py-4 sm:px-8 h-[85px] md:h-[112px] backdrop-blur-md bg-[#181d27] md:bg-transparent sticky top-0 z-10">
+<div class="flex flex-row items-center justify-between px-4 sm:py-4 sm:px-8 h-[85px] md:h-[112px] backdrop-blur-md bg-[#181d27] md:bg-transparent sticky md:static top-0 z-10">
 
     <!--Mobile View-->
     <div class="md:hidden flex items-center justify-center h-full">
