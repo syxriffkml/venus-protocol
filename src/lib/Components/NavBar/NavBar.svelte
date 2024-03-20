@@ -6,8 +6,9 @@
     import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
     import { initializeStores } from '@skeletonlabs/skeleton';
 
-    import SideBar from '$lib/Components/SideBar/SideBar.svelte';
+    import NavDrawer from '$lib/Components/NavBar/NavDrawer.svelte';
     import { currentTabName } from "$lib/headerStore";
+	import { slide } from "svelte/transition";
 
     initializeStores();
     const drawerStore = getDrawerStore();
@@ -19,26 +20,29 @@
     const drawerSettings: DrawerSettings = {
 		id: 'sidebar-drawer',
 		// Provide your property overrides:
-		bgDrawer: 'bg-[#0a0a0a] text-white z-[100]',
-		bgBackdrop: 'bg-black/50 z-[100]',
-		width: 'h-auto sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 w-full',
+		bgDrawer: 'bg-[#181d27] text-white !z-[100]',
+		bgBackdrop: 'bg-transparent !z-[1]',
+		width: 'h-auto w-full',
 		padding: '',
 		rounded: 'rounded-none',
-		position: 'left'
+		position: 'bottom',
 	};
-
 
     let page_name: string;
     currentTabName.subscribe(value => {
         page_name = value;
     });
+
+    let drawerOpen: boolean = false;
 </script>
 
-<div class="flex flex-row justify-between p-1 sm:py-4 sm:px-8 h-[85px] md:h-[112px] backdrop-blur-md bg-transparent sticky top-0 z-10">
+<div class="flex flex-row items-center justify-between px-4 sm:py-4 sm:px-8 h-[85px] md:h-[112px] backdrop-blur-md bg-[#181d27] md:bg-transparent sticky top-0 z-10">
 
     <!--Mobile View-->
     <div class="md:hidden flex items-center justify-center h-full">
-        <img src="https://app.venus.io/assets/venusLogo-ccf6fbc9.svg" alt="Venus logo" >
+        <button on:click={(()=>{ window.location.href = '/' })}>
+            <img src="https://app.venus.io/assets/venusLogo-ccf6fbc9.svg" alt="Venus logo" >
+        </button>
     </div>
     <!--End of Mobile View-->
 
@@ -50,7 +54,7 @@
 
     <div class="flex flex-row items-center gap-x-2">
 
-        <button class="w-auto lg:w-[200px] h-auto sm:h-[48px] bg-[#1e2431] hover:bg-[#2d3549] py-2 px-4 rounded-lg flex flex-row items-center justify-between border border-gray-700 gap-x-2 lg:gap-x-0">
+        <button class="w-auto lg:w-[200px] h-[40px] sm:h-[48px] bg-[#1e2431] hover:bg-[#2d3549] py-2 px-4 rounded-lg flex flex-row items-center justify-between border border-gray-700 gap-x-2 lg:gap-x-0">
             <div class="flex flex-row items-center gap-x-2">
                 <img src="https://app.venus.io/assets/bnb-8cd7030f.svg" alt="img" class="h-5 w-5">
                 <p class="text-sm font-semibold hidden lg:inline">BNB Chain</p>
@@ -58,14 +62,28 @@
             <Icon icon="mingcute:down-line" class="h-5 w-5"/>
         </button>
         
-        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-auto sm:h-[48px]" handler={(event) => {  }}>Connect Wallet</Button>
+        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-[40px] sm:h-[48px]" handler={(event) => {  }}>Connect Wallet</Button>
     </div>
     <!--End of Desktop View-->
 
 
     <!--Mobile View-->
-    <button class="flex md:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg z-[1] h-auto sm:h-[48px]" on:click={(()=>{ drawerStore.open(drawerSettings); })}>
-        <Icon icon="solar:hamburger-menu-linear" class="w-8 h-8"/>
+    <button 
+        class="flex md:hidden items-center justify-center p-2 bg-white/5 rounded-lg z-[1] h-[40px]" 
+        on:click={(()=>{ 
+            drawerOpen ? hideDrawer() : drawerStore.open(drawerSettings);
+            drawerOpen = !drawerOpen;
+        })}
+    >
+        {#if drawerOpen}
+            <div in:slide>
+                <Icon icon="ic:round-close" class="w-6 h-auto"/>
+            </div>
+        {:else}
+            <div in:slide>
+                <Icon icon="solar:hamburger-menu-linear" class="w-6 h-auto"/>
+            </div>
+        {/if}
     </button>
     <!--End of Mobile View-->
 </div>
@@ -75,10 +93,9 @@
 </div>
 
 <Drawer>
-    <p>Test</p>
-    <button on:click={hideDrawer}>
-        <Icon icon="ic:round-close" class="w-8 h-8"/>
-    </button>
+    <div class=" py-2" style="height: calc(100vh - 85px);">
+        <NavDrawer/>
+    </div>
 </Drawer>
 
 
