@@ -28,16 +28,18 @@
         currentPage = window.location.pathname;
     }
 
-
     onMount(() => {
         const currentTab = tabs.find(tab => tab.href === currentPage);
-        if (currentTab) {
+        const currentUrl = window.location.href;
+
+        if (currentUrl.includes('proposal')) {
+            currentTabName.set(`Governance / Proposal`);
+        } else if (currentTab) {
             currentTabName.set(currentTab.name);
         } else {
             console.log("Current page:", currentPage, "No matching tab found");
         }
     });
-
 </script>
 
 <div use:setCurrentPage class="bg-[#1e2431] h-full flex flex-col gap-y-12">
