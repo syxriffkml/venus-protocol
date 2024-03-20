@@ -87,7 +87,7 @@
     <!--End of Mobile View-->
 </div>
 
-<div class="w-full px-8 pb-4 flex md:hidden">
+<div class="w-full px-8 pb-4 flex md:hidden mt-[85px]">
     <p class="text-xl font-bold">{page_name}</p>
 </div>
 
