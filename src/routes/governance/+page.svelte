@@ -5,8 +5,6 @@
     import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
     import { goto } from '$app/navigation';
     import { snapshot, critical, fast_track } from '$lib/Components/SVG/governance_svg'
-    import { selectedProposal } from '$lib/selectedProposal';
-
 
     let proposals = [
         {id: '274', info: 'Critical', voted: 'Not voted', title: 'VIP-274 Rebrand agEUR into EURA (1/2)', executed: '18 Mar 2024 6:35 PM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
@@ -20,8 +18,7 @@
 
 
     function selectProposal(proposal: any) {
-        selectedProposal.set(proposal);
-        goto(`/governance/proposal/?id=${proposal.id}`);
+        goto(`/governance/proposal/${proposal.id}`);    
     }
 </script>
 

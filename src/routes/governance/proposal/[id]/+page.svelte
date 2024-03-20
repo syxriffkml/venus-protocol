@@ -1,14 +1,29 @@
 <script lang="ts">
-    import { selectedProposal } from '$lib/selectedProposal';
     import { snapshot, critical, fast_track } from '$lib/Components/SVG/governance_svg'
     import Card from '$lib/Components/Card/Card.svelte';
 	import Button from '$lib/Components/Button/Button.svelte';
 	import Icon from '@iconify/svelte';
     import { ProgressBar } from '@skeletonlabs/skeleton';
+	import { page } from '$app/stores';
 
 
     //Get the selected proposal from the governance page
-    let proposal = $selectedProposal;
+    const { id } = $page.params;
+    console.log('the id is:',id)
+
+    //proposal data from governance page
+    let proposals = [
+        {id: '274', info: 'Critical', voted: 'Not voted', title: 'VIP-274 Rebrand agEUR into EURA (1/2)', executed: '18 Mar 2024 6:35 PM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '273', info: 'Fast track', voted: 'Not voted', title: 'VIP-273 Risk Parameters Adjustments (XVS Ethereum bridge limits)', executed: '18 Mar 2024 9:49 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '272', info: '', voted: 'Not voted', title: 'VIP-272 Bootstrap XVS liquidity for the Ethereum rewards', executed: '19 Mar 2024 3:45 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '271', info: 'Critical', voted: 'Not voted', title: 'VIP-271 Treasury Management', executed: '17 Mar 2024 3:25 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '270', info: '', voted: 'Not voted', title: 'VIP-270 Partial liquidation of the BNB bridge exploiter account', executed: '10 Mar 2024 5:32 AM', status: 'Cancelled', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '269', info: '', voted: 'Not voted', title: 'VIP-269 BUSD debt mitigation', executed: '10 Mar 2024 5:32 AM', status: 'Defeated', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+        {id: '268', info: 'Fast track', voted: 'Not voted', title: 'VIP-268 USDT debt mitigation', executed: '3 Mar 2024 8:43 AM', status: 'Executed', address:'0x82af53ec326f3e6dbd5bf15216d99ebad732975a283b3556d730f050a4586f26'},
+    ];
+
+    //Get proposal data based on the ID we geet from the link
+    let proposal = proposals?.find(proposal => proposal.id === id);
 
     let slicedAddress = proposal ? `${proposal.address.slice(0, 4)}...${proposal.address.slice(-4)}` : '';
 
@@ -75,53 +90,55 @@
                 <div class="flex flex-row items-center justify-between w-full">
                     <div class="flex flex-row items-center gap-x-2">
                         <div class="rounded-lg py-1 px-2 bg-[#2d3549]">
-                            <p class="text-sm">#{proposal.id}</p>
+                            <p class="text-sm">#{proposal?.id}</p>
                         </div>
-                        {#if proposal.info}
+                        {#if proposal?.info}
                             <div class="rounded-lg py-1 px-2 bg-[#2d3549] flex flex-row items-center gap-x-1">
-                                {#if proposal.info.toLowerCase() === 'fast track'}
+                                {#if proposal?.info.toLowerCase() === 'fast track'}
                                     {@html fast_track}
-                                {:else if proposal.info.toLowerCase() === 'critical'}
+                                {:else if proposal?.info.toLowerCase() === 'critical'}
                                     {@html critical}
                                 {/if}
-                                <p class="text-sm">{proposal.info}</p>
+                                <p class="text-sm">{proposal?.info}</p>
                             </div>
                         {/if}
                     </div>
                 </div>
 
-                <p class="font-semibold text-xl">{proposal.title}</p>
+                <p class="font-semibold text-xl">{proposal?.title}</p>
 
-                <a href="https://bscscan.com/tx/{proposal.address}" target="_blank" class="flex flex-row gap-x-2 items-center text-[#3a78ff] hover:underline">
+                <a href="https://bscscan.com/tx/{proposal?.address}" target="_blank" class="flex flex-row gap-x-2 items-center text-[#3a78ff] hover:underline">
                     <span class="md:hidden">{slicedAddress}</span>
-                    <span class="hidden md:inline">{proposal.address}</span>
+                    <span class="hidden md:inline">{proposal?.address}</span>
                     <Icon icon="akar-icons:link-out" />
                 </a>
             </div>
             <div class="flex flex-col gap-2 w-full xl:w-[35%] px-6 xl:px-12 pt-6">
                 <p>Proposal History</p>
 
-                {#each Object.entries(proposalHistory[proposal.status]) as [step, completed], index}
-                    <div class="flex flex-row justify-between" style="transform: translateY(-{index * 8}px);">
-                        <div class="mr-3 flex flex-col items-center">
-                            <div>
-                                <div class="flex items-center justify-center p-1 rounded-full w-fit {completed ? 'bg-[#00c38e]' : 'bg-[#ff0000]'}">
-                                    {#if completed}
-                                        <Icon icon="mdi:check" class="w-4 h-auto"/>
-                                    {:else}
-                                        <Icon icon="radix-icons:cross-2" class="w-4 h-auto"/>
-                                    {/if}
+                {#if proposal}
+                    {#each Object.entries(proposalHistory[proposal.status]) as [step, completed], index}
+                        <div class="flex flex-row justify-between" style="transform: translateY(-{index * 8}px);">
+                            <div class="mr-3 flex flex-col items-center">
+                                <div>
+                                    <div class="flex items-center justify-center p-1 rounded-full w-fit {completed ? 'bg-[#00c38e]' : 'bg-[#ff0000]'}">
+                                        {#if completed}
+                                            <Icon icon="mdi:check" class="w-4 h-auto"/>
+                                        {:else}
+                                            <Icon icon="radix-icons:cross-2" class="w-4 h-auto"/>
+                                        {/if}
+                                    </div>
                                 </div>
+                                <div class={`h-full w-px bg-gray-300 ${index === Object.entries(proposalHistory["Executed"]).length - 1 ? 'hidden' : ''}`}></div>
                             </div>
-                            <div class={`h-full w-px bg-gray-300 ${index === Object.entries(proposalHistory["Executed"]).length - 1 ? 'hidden' : ''}`}></div>
-                        </div>
-                        <div class="pb-4 flex grow">
-                            <p class="text-sm">{step}</p>
-                        </div>
+                            <div class="pb-4 flex grow">
+                                <p class="text-sm">{step}</p>
+                            </div>
 
-                        <p class="text-xs text-gray-300">10 Mar 2024 2:09 AM</p>
-                    </div>
-                {/each}
+                            <p class="text-xs text-gray-300">10 Mar 2024 2:09 AM</p>
+                        </div>
+                    {/each}
+                {/if}
             </div>
         </div>
 
