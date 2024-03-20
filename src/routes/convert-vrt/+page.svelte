@@ -30,7 +30,7 @@
 
             {#if tabActive === "Convert"}
                 <div class="mt-8 flex flex-row items-center gap-x-2 border border-white/15 rounded-lg px-4 py-3">
-                    <Icon icon="material-symbols:info-outline" class="text-[#3a78ff] w-6 h-6"/>
+                    <Icon icon="material-symbols:info-outline" class="text-[#3a78ff] min-w-6 min-h-6"/>
                     <p class="text-sm font-normal -translate-y-0.5">Completed @ 16:00 on 3.31.23</p>
                 </div>
             {:else if tabActive === "Withdraw"}
