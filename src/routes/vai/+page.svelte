@@ -107,7 +107,7 @@
                             <p class="text-sm font-semibold">${borrow.max}</p>
                         </div>
                     </div>
-                    <div class="w-full -mt-2">
+                    <div class="w-full -mt-2 relative progress-bar">
                         <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#2d3549]" value={0} max={100} />
                     </div>
 
@@ -171,7 +171,7 @@
                             <p class="text-sm font-semibold">${repay.max}</p>
                         </div>
                     </div>
-                    <div class="w-full -mt-2">
+                    <div class="w-full -mt-2 relative progress-bar">
                         <ProgressBar label="Progress Bar" meter="bg-[#00c38e]" track="bg-[#2d3549]" value={0} max={100} />
                     </div>
 
@@ -199,3 +199,15 @@
         </Card>
     </div>
 </div>
+
+<style scoped>
+    .progress-bar::after {
+        content: "";
+        background-color: #e93d66;
+        width: 4px;
+        height: 8px;
+        position: absolute;
+        top: 0;
+        left: 80%;
+    }
+</style>
