@@ -49,7 +49,7 @@
         <img src="https://app.venus.io/assets/venusLogo-ccf6fbc9.svg" alt="Venus logo" class="h-9 block xl:hidden">
     </button>
 
-    <div class="w-full h-full overflow-y-scroll flex flex-col items-center xl:flex-none">
+    <div class="w-full overflow-y-auto flex flex-col items-center xl:flex-none" style="height: calc(100vh - 116px);">
         {#each tabs as tab(tab.href)}
             <Button 
                 width="w-[55px] xl:w-full" mode="side" rounded="rounded-xl xl:rounded-none" 
