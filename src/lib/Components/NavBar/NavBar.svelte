@@ -53,7 +53,6 @@
     </div>
 
     <div class="flex flex-row items-center gap-x-2">
-
         <button class="w-auto lg:w-[200px] h-[40px] sm:h-[48px] bg-[#1e2431] hover:bg-[#2d3549] py-2 px-4 rounded-lg flex flex-row items-center justify-between border border-gray-700 gap-x-2 lg:gap-x-0">
             <div class="flex flex-row items-center gap-x-2">
                 <img src="https://app.venus.io/assets/bnb-8cd7030f.svg" alt="img" class="h-5 w-5">
@@ -62,7 +61,7 @@
             <Icon icon="mingcute:down-line" class="h-5 w-5"/>
         </button>
         
-        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-[40px] sm:h-[48px]" handler={(event) => {  }}>Connect Wallet</Button>
+        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-[40px] sm:h-[48px] whitespace-nowrap text-xs sm:text-base font-medium sm:font-normal" handler={(event) => {  }}>Connect Wallet</Button>
     </div>
     <!--End of Desktop View-->
 

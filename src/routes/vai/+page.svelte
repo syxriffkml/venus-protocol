@@ -41,6 +41,7 @@
 
 
 <div class="h-auto w-full flex flex-col xl:max-w-[90rem] items-start mx-auto px-8 gap-6 mb-4">
+
     <div class="flex items-center justify-center w-full">
         <div class="flex flex-row items-center gap-x-2 border border-white/15 rounded-lg px-4 py-3 w-full md:w-[550px]">
             <Icon icon="material-symbols:info-outline" class="text-[#3a78ff] min-w-6 min-h-6"/>
@@ -94,7 +95,7 @@
                         <p class="text-sm md:text-base">{borrow.borrow_apr}</p>
                     </div>
 
-                    <hr>
+                    <hr class="!border-[#293143]">
 
                     <div class="flex flex-row items-center justify-between w-full">
                         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-x-1">
@@ -159,7 +160,7 @@
                         </p>
                         <p class="text-sm md:text-base">{repay.borrow_apr}</p>
                     </div>
-                    <hr>
+                    <hr class="!border-[#293143]">
                     <div class="flex flex-row items-center justify-between w-full">
                         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-x-1">
                             <p class="text-[#8fa5ad] text-sm">Current:</p>

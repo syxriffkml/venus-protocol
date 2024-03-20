@@ -86,7 +86,7 @@
                 <p class="text-[#a2acc5] font-semibold">Voting weight</p>
                 <p class="text-2xl font-semibold">0</p>
             </div>
-            <hr>
+            <hr class="!border-[#293143]">
             <div class="flex flex-col items-start">
                 <p class="text-[#a2acc5] font-semibold">Total locked</p>
                 <div class="text-2xl font-semibold flex flex-row items-center gap-x-2">
