@@ -24,10 +24,13 @@
             window.removeEventListener('click', handleClickOutside);
         });
     }
+
+    //ComboBox custom class declaration
+    export let classes: string = '';
 </script>
 
 <button
-	class="flex flex-row items-center justify-between gap-x-6 bg-[#2d3549] hover:bg-[#4c5670] rounded-lg py-2 px-4"
+	class="flex flex-row items-center justify-between gap-x-6 bg-[#2d3549] hover:bg-[#4c5670] rounded-lg py-2 px-4 w-full {classes}"
 	on:click|stopPropagation={(event) => {
         showCombo = !showCombo;
     }}

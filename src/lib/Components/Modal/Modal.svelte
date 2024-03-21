@@ -81,7 +81,7 @@
 					</header>
                 {:else if type === 'dark'}
                     <header class="flex items-center justify-center px-4 pt-2 pb-0 mb-4 relative">
-						<h2 class="text-lg font-light whitespace-nowrap">
+						<h2 class="text-lg !font-medium whitespace-nowrap">
 							{title}
                         </h2>
 						<button on:click={closeModal} class="absolute right-[16px]">
