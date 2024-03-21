@@ -86,6 +86,11 @@
                                             <Icon icon="ic:round-search" class="w-6 h-6"/>
                                         </div>
                                         <input type="text" placeholder="Search asset" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="searchFrom" bind:value={searchFrom} />
+                                        <div class="flex flex-row gap-x-2 {searchFrom ? 'visible' : 'invisible'}">
+                                            <button on:click={() => { searchFrom = ''; }}>
+                                                <Icon icon="material-symbols:cancel-outline" />
+                                            </button>
+                                        </div>
                                     </div>
 
                                     <div class="flex flex-row gap-x-2 items-center mb-4">
@@ -149,6 +154,11 @@
                                             <Icon icon="ic:round-search" class="w-6 h-6"/>
                                         </div>
                                         <input type="text" placeholder="Search asset" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="searchTo" bind:value={searchTo} />
+                                        <div class="flex flex-row gap-x-2 {searchTo ? 'visible' : 'invisible'}">
+                                            <button on:click={() => { searchTo = ''; }}>
+                                                <Icon icon="material-symbols:cancel-outline" />
+                                            </button>
+                                        </div>
                                     </div>
 
                                     <div class="flex flex-row gap-x-2 items-center mb-4">
