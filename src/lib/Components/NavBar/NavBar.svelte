@@ -8,7 +8,6 @@
     import { currentTabName } from "$lib/headerStore";
 	import { slide } from "svelte/transition";
     import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
-    
     import Modal from '$lib/Components/Modal/Modal.svelte';
     import WalletModal from "$lib/Components/Modal/ModalTemplate/WalletModal.svelte";
 

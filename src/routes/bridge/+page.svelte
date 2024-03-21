@@ -4,6 +4,17 @@
 	import Icon from '@iconify/svelte';
     import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
     import {layer_zero} from '$lib/Components/SVG/bridge_svg'
+    import Modal from '$lib/Components/Modal/Modal.svelte';
+    import WalletModal from "$lib/Components/Modal/ModalTemplate/WalletModal.svelte";
+
+    let walletModal: Modal;
+    //Close wallet modal
+    const closeWalletModal = () => {
+        if (walletModal) {
+            walletModal.closeModal();
+        }
+    };
+
 
     let fromData = [
 		{ header: 'BNB Chain', img: "https://app.venus.io/assets/bnb-8cd7030f.svg", info: 0 },
@@ -146,7 +157,7 @@
                     <p class="text-sm md:text-base">0 BNB</p>
                 </div>
 
-                <Button width="w-full" mode="blue" rounded="rounded-lg" customClass="h-[40px] sm:h-[48px] whitespace-nowrap text-xs sm:text-base font-medium sm:font-normal" handler={(event) => {  }}>Connect Wallet</Button>
+                <Button width="w-full" mode="blue" rounded="rounded-lg" customClass="h-[40px] sm:h-[48px] whitespace-nowrap text-xs sm:text-base font-medium sm:font-normal" handler={(event) => { walletModal.openModal(); }}>Connect Wallet</Button>
             </div>
         </Card>
 
@@ -168,3 +179,7 @@
     </div>
 
 </div>
+
+<Modal bind:this={walletModal} title="Connect a wallet" desktopWidth="md:w-[542px]" mobileWidth="w-auto">
+    <WalletModal {closeWalletModal}/>
+ </Modal>
