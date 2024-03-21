@@ -33,7 +33,7 @@
     $: filteredFromData = fromData.filter(item => item.header.toLowerCase().includes(searchFrom.toLowerCase()));
 
     let searchTo: String = '';
-    $: filteredToData = fromData.filter(item => item.header.toLowerCase().includes(searchTo.toLowerCase()));
+    $: filteredToData = toData.filter(item => item.header.toLowerCase().includes(searchTo.toLowerCase()));
 
     //From dropdown selected value
     let fromHeader: string = fromData[0].header;
