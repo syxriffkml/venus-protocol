@@ -1,14 +1,14 @@
 <script lang="ts">
-        import * as footer_svg from "$lib/Components/SVG/footer_svg";
+    import * as footer_svg from "$lib/Components/SVG/footer_svg";
 
-        let footer_links = [
-            {name:'bsc scan', href:'https://bscscan.com/token/0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63', icon: footer_svg.bsc_scan_svg},
-            {name:'discord', href:'https://discord.com/invite/pTQ9EBHYtF', icon: footer_svg.discord_svg},
-            {name:'telegram', href:'https://t.me/venusprotocol', icon: footer_svg.telegram_svg},
-            {name:'twitter', href:'https://twitter.com/VenusProtocol', icon: footer_svg.twitter_svg},
-            {name:'medium', href:'https://medium.com/@Venus_protocol', icon: footer_svg.medium_svg},
-            {name:'github', href:'https://github.com/VenusProtocol/', icon: footer_svg.github_svg}
-        ]
+    let footer_links = [
+        {name:'bsc scan', href:'https://bscscan.com/token/0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63', icon: footer_svg.bsc_scan_svg},
+        {name:'discord', href:'https://discord.com/invite/pTQ9EBHYtF', icon: footer_svg.discord_svg},
+        {name:'telegram', href:'https://t.me/venusprotocol', icon: footer_svg.telegram_svg},
+        {name:'twitter', href:'https://twitter.com/VenusProtocol', icon: footer_svg.twitter_svg},
+        {name:'medium', href:'https://medium.com/@Venus_protocol', icon: footer_svg.medium_svg},
+        {name:'github', href:'https://github.com/VenusProtocol/', icon: footer_svg.github_svg}
+    ]
 </script>
 
 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-6 p-4 h-auto sm:h-[56px] bg-transparent w-full">
