@@ -7,12 +7,20 @@
     import NavDrawer from '$lib/Components/NavBar/NavDrawer.svelte';
     import { currentTabName } from "$lib/headerStore";
 	import { slide } from "svelte/transition";
+    import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
+    
     import Modal from '$lib/Components/Modal/Modal.svelte';
     import WalletModal from "$lib/Components/Modal/ModalTemplate/WalletModal.svelte";
-    import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
 
     let walletModal: Modal;
     let chainModal: Modal;
+
+    //Close wallet modal
+    const closeWalletModal = () => {
+        if (walletModal) {
+            walletModal.closeModal();
+        }
+    };
 
     initializeStores();
     const drawerStore = getDrawerStore();
@@ -142,7 +150,7 @@
 </Drawer>
 
 <Modal bind:this={walletModal} title="Connect a wallet" desktopWidth="md:w-[542px]" mobileWidth="w-auto">
-   <WalletModal/>
+   <WalletModal {closeWalletModal}/>
 </Modal>
 
 <Modal bind:this={chainModal} title="Select network">
