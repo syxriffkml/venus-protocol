@@ -11,7 +11,7 @@
     ]
 </script>
 
-<div class="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-6 p-4 h-auto sm:h-[56px] bg-transparent w-full">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-y-4 gap-x-6 py-4 px-8 h-auto sm:h-[56px] bg-transparent w-full">
     <a href="https://docs-v4.venus.io/" target="_blank" class="underline text-sm">Documentation</a>
 
     <div class="bg-[#303e5e] h-full w-[1px] hidden sm:block"></div>
