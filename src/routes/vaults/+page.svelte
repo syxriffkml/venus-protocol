@@ -2,6 +2,7 @@
 	import Card from '$lib/Components/Card/Card.svelte';
 	import Button from '$lib/Components/Button/Button.svelte';
 	import Icon from '@iconify/svelte';
+    import Modal from '$lib/Components/Modal/Modal.svelte'
 
     let vaults = [
         { 
@@ -21,6 +22,33 @@
             total_staked: '3.36M'
         }
     ];
+
+    //Modal declaration
+    let stakeModal: Modal;
+    let withdrawModal: Modal;
+
+    let modalTitle: string = '';
+
+    function stakeModal_xvs() {
+        modalTitle = 'Stake XVS';
+        stakeModal.openModal();
+    }
+
+    function stakeModal_vai() {
+        modalTitle = 'Stake VAI';
+        stakeModal.openModal();
+    }
+
+    function withdrawModal_xvs() {
+        modalTitle = 'Withdraw XVS';
+        withdrawModal.openModal();
+    }
+
+    function withdrawModal_vai() {
+        modalTitle = 'Withdraw VAI';
+        withdrawModal.openModal();
+    }
+
 
 </script>
 
@@ -64,8 +92,8 @@
             </div>
 
             <div class="flex flex-col sm:flex-row items-center gap-4">
-                <Button width="w-full" mode="blue" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => {  }}>Stake</Button>
-                <Button width="w-full" mode="blue-inverted" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => {  }}>Withdraw</Button>
+                <Button width="w-full" mode="blue" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => { stakeModal_xvs(); }}>Stake</Button>
+                <Button width="w-full" mode="blue-inverted" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => { withdrawModal_xvs(); }}>Withdraw</Button>
             </div>
         </div>
     </Card>
@@ -107,10 +135,23 @@
             </div>
 
             <div class="flex flex-col sm:flex-row items-center gap-4">
-                <Button width="w-full" mode="blue" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => {  }}>Stake</Button>
-                <Button width="w-full" mode="blue-inverted" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => {  }}>Withdraw</Button>
+                <Button width="w-full" mode="blue" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => { stakeModal_vai(); }}>Stake</Button>
+                <Button width="w-full" mode="blue-inverted" rounded="rounded-lg" customClass="font-semibold h-auto sm:h-[48px]" handler={(event) => { withdrawModal_vai(); }}>Withdraw</Button>
             </div>
         </div>
     </Card>
 
 </div>
+
+
+<Modal bind:this={stakeModal} title={modalTitle}>
+    <div class="my-2">
+        Stake Modal
+    </div>
+</Modal>
+
+<Modal bind:this={withdrawModal} title={modalTitle}>
+    <div class="my-2">
+        Withdraw Modal
+    </div>
+</Modal>

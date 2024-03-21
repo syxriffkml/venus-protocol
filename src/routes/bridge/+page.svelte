@@ -182,4 +182,4 @@
 
 <Modal bind:this={walletModal} title="Connect a wallet" desktopWidth="md:w-[542px]" mobileWidth="w-auto">
     <WalletModal {closeWalletModal}/>
- </Modal>
+</Modal>
