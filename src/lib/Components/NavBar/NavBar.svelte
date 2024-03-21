@@ -9,6 +9,10 @@
     import NavDrawer from '$lib/Components/NavBar/NavDrawer.svelte';
     import { currentTabName } from "$lib/headerStore";
 	import { slide } from "svelte/transition";
+    import Modal from '$lib/Components/Modal/Modal.svelte';
+    import WalletModal from "$lib/Components/Modal/ModalTemplate/WalletModal.svelte";
+
+    let walletModal: Modal;
 
     initializeStores();
     const drawerStore = getDrawerStore();
@@ -61,7 +65,7 @@
             <Icon icon="mingcute:down-line" class="h-5 w-5"/>
         </button>
         
-        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-[40px] sm:h-[48px] whitespace-nowrap text-xs sm:text-base font-medium sm:font-normal" handler={(event) => {  }}>Connect Wallet</Button>
+        <Button width="w-auto" mode="blue" rounded="rounded-lg" customClass="h-[40px] sm:h-[48px] whitespace-nowrap text-xs sm:text-base font-medium sm:font-normal" handler={(event) => { walletModal.openModal() }}>Connect Wallet</Button>
     </div>
     <!--End of Desktop View-->
 
@@ -97,4 +101,6 @@
     </div>
 </Drawer>
 
-
+<Modal bind:this={walletModal} title="Connect a wallet" desktopWidth="md:w-[542px]" mobileWidth="w-auto">
+   <WalletModal/>
+</Modal>
