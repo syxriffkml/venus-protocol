@@ -62,7 +62,7 @@
                 <div class="flex flex-col md:flex-row items-center gap-x-6">
                     <div class="flex flex-col gap-y-2 w-full md:w-[211px] relative">
                         <p class="text-[#98abca] text-sm font-semibold">From</p>
-                        <ComboBox headSelect={fromHeader} imgSelect={fromImg} bind:showCombo={showFromDropdown}>
+                        <ComboBox headSelect={fromHeader} imgSelect={fromImg} bind:showCombo={showFromDropdown} classes="!h-[44px]">
                             <div class="z-[9999] ">
                                 <div class="max-h-[215px] overflow-auto">
                                     {#each filteredFromData as f}
@@ -88,14 +88,14 @@
                     </div>
 
                     <div class="flex flex-col items-center justify-end w-fit translate-y-3">
-                        <button class="w-auto h-auto rotate-0 md:rotate-90" on:click={swap}>
+                        <button class="w-auto p-2 h-auto rotate-0 md:rotate-90" on:click={swap}>
                             <Icon icon="iconamoon:swap-light" class="h-6 w-6 text-[#366bdf]"/>
                         </button>
                     </div>
 
                     <div class="flex flex-col gap-y-2 w-full md:w-[211px] relative">
                         <p class="text-[#98abca] text-sm font-semibold">To</p>
-                        <ComboBox headSelect={toHeader} imgSelect={toImg} bind:showCombo={showToDropdown}>
+                        <ComboBox headSelect={toHeader} imgSelect={toImg} bind:showCombo={showToDropdown} classes="!h-[44px]">
                             <div class="z-[9999]">
                                 <div class="max-h-[215px] overflow-auto">
                                     {#each filteredToData as t}
