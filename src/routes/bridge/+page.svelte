@@ -89,7 +89,7 @@
 
                     <div class="flex flex-col items-center justify-end w-fit translate-y-3">
                         <button class="w-auto p-2 h-auto rotate-0 md:rotate-90" on:click={swap}>
-                            <Icon icon="iconamoon:swap-light" class="h-6 w-6 text-[#366bdf]"/>
+                            <Icon icon="iconamoon:swap-light" class="h-6 w-6 text-[#3a78ff]"/>
                         </button>
                     </div>
 
