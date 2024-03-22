@@ -22,7 +22,7 @@
         <Card customClass="!border-none !rounded-2xl !py-8" width="w-full md:w-[550px]">
             <div class="flex flex-row items-center gap-x-6 w-full">
                 {#each tab as tab}
-                    <button class="w-full py-2 rounded-lg !transition-all !duration-300 {tabActive === tab?'bg-[#2d3549] text-white':'bg-transparent text-[#a1b2ca] hover:bg-[#2d3549]'}" on:click={(()=>{ istabActive(tab) })} >
+                    <button class="w-full py-2 rounded-lg text-sm font-medium !transition-all !duration-300 {tabActive === tab?'bg-[#2d3549] text-white':'bg-transparent text-[#a1b2ca] hover:bg-[#2d3549]'}" on:click={(()=>{ istabActive(tab) })} >
                         <p>{tab}</p>
                     </button>
                 {/each}
