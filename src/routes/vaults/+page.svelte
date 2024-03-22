@@ -23,12 +23,17 @@
         }
     ];
 
+    let xvs =  { token: 'XVS', img: 'https://app.venus.io/assets/xvs-e7b82352.svg', available: '0', requested:'0', locking_period:'7 days' };
+    
+    let vai =  { token: 'VAI', img: 'https://app.venus.io/assets/vai-4ecaa030.svg', available: '0',  };
+
     //Modal declaration
     let stakeModal: Modal;
     let withdrawModal: Modal;
 
     let modalTitle: string = '';
 
+    //Start of the stakeModal functions
     function stakeModal_xvs() {
         modalTitle = 'Stake XVS';
         stakeModal.openModal();
@@ -48,8 +53,28 @@
         modalTitle = 'Withdraw VAI';
         withdrawModal.openModal();
     }
+    //End of the stakeModal functions
 
+    //Tab functions
+    let tab: string[] = ["Withdraw", "Request Withdrawal"];
+    let tabActive: string = tab[0]; 
+    let isActive:boolean = false;
 
+    function istabActive(selected:string) {
+        tabActive = selected;
+        isActive = true;
+    }
+
+    let stakeInput: string = '';
+    let withdrawInput: string = '';
+    function handleInput(event: any) {
+        event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+        if (event.target.name === 'stakeInput') {
+            stakeInput = event.target.value;
+        }else if(event.target.name === 'withdrawInput'){
+            withdrawInput = event.target.value;
+        }
+    }
 </script>
 
 
@@ -144,14 +169,123 @@
 </div>
 
 
-<Modal bind:this={stakeModal} title={modalTitle}>
-    <div class="my-2">
-        Stake Modal
+<Modal bind:this={stakeModal} title={modalTitle} desktopWidth="sm:w-[540px]" mobileWidth="w-[90%]">
+    <div class="my-8 flex flex-col gap-y-4 px-4 sm:px-8">
+
+        <div class="relative flex w-full h-14 items-center justify-between rounded-lg border border-white/5 bg-[#181d27] px-2">
+            <div class="flex flex-row gap-x-2">
+                <img src={modalTitle === 'Stake XVS' ? xvs.img : modalTitle === 'Stake VAI' ? vai.img : ''} alt="img" class="w-8 h-auto">
+            </div>
+            <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="stakeInput" on:input={handleInput} bind:value={stakeInput}/>
+
+            <div class="flex flex-row gap-x-2 h-[40px]">
+                <button class="w-auto h-auto bg-[#2d3549] hover:bg-[#4c5670] py-2 px-3 rounded-lg flex items-center justify-center text-[#a1b2ca] whitespace-nowrap">
+                    MAX
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-row items-center justify-between w-full">
+            <p class="text-[#8fa5ad] text-sm md:text-base flex flex-row items-center gap-x-2">
+                <img src={modalTitle === 'Stake XVS' ? xvs.img : modalTitle === 'Stake VAI' ? vai.img : ''} alt="img" class="w-5 h-auto">
+                <span>Available&nbsp;{modalTitle === 'Stake XVS' ? xvs.token : modalTitle === 'Stake VAI' ? vai.token : ''}</span>
+            </p>
+            <p class="text-sm md:text-base">{modalTitle === 'Stake XVS' ? xvs.available : modalTitle === 'Stake VAI' ? vai.available : ''}&nbsp;{modalTitle === 'Stake XVS' ? xvs.token : modalTitle === 'Stake VAI' ? vai.token : ''}</p>
+        </div>
+
+        <!--Proceed staking button-->
+        <button class="bg-[#2d3549] py-2 w-full rounded-lg">
+            <p class="text-[#9eafca] text-md font-semibold">Enter a valid amount to stake</p>
+        </button>
+
     </div>
 </Modal>
 
-<Modal bind:this={withdrawModal} title={modalTitle}>
-    <div class="my-2">
-        Withdraw Modal
+<Modal bind:this={withdrawModal} title={modalTitle} desktopWidth="sm:w-[540px]" mobileWidth="w-[90%]">
+    <div class="my-8 flex flex-col gap-y-4 px-4 sm:px-8">
+        {#if modalTitle === 'Withdraw XVS'}
+            <div class="flex flex-row items-center gap-x-6 w-full">
+                {#each tab as tab}
+                    <button class="w-full py-2 rounded-lg text-sm font-medium !transition-all !duration-300 {tabActive === tab?'bg-[#2d3549] text-white':'bg-transparent text-[#a1b2ca] hover:bg-[#2d3549]'}" on:click={(()=>{ istabActive(tab) })} >
+                        <p>{tab}</p>
+                    </button>
+                {/each}
+            </div>
+            {#if tabActive === "Withdraw"}
+                <div class="flex flex-row items-center justify-between w-full mt-6">
+                    <p class="text-[#8fa5ad] text-sm md:text-base flex flex-row items-center gap-x-2">
+                        <img src={xvs.img} alt="img" class="w-5 h-auto">
+                        <span>Available&nbsp;{xvs.token}</span>
+                    </p>
+                    <p class="text-sm md:text-base">{xvs.available}&nbsp;{xvs.token}</p>
+                </div>
+        
+                <!--Proceed withdraw button-->
+                <button class="bg-[#2d3549] py-2 w-full rounded-lg mt-4">
+                    <p class="text-[#9eafca] text-md font-semibold">Withdraw</p>
+                </button>
+            {:else if tabActive === "Request Withdrawal"}
+                <div class="relative flex w-full h-14 items-center justify-between rounded-lg border border-white/5 bg-[#181d27] px-2 mt-4">
+                    <div class="flex flex-row gap-x-2">
+                        <img src={xvs.img} alt="img" class="w-8 h-auto">
+                    </div>
+                    <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="withdrawInput" on:input={handleInput} bind:value={withdrawInput}/>
+        
+                    <div class="flex flex-row gap-x-2 h-[40px]">
+                        <button class="w-auto h-auto bg-[#2d3549] hover:bg-[#4c5670] py-2 px-3 rounded-lg flex items-center justify-center text-[#a1b2ca] whitespace-nowrap">
+                            MAX
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-row items-center justify-between w-full mt-2">
+                    <p class="text-[#8fa5ad] text-sm md:text-base flex flex-row items-center gap-x-2">
+                        <img src={xvs.img} alt="img" class="w-5 h-auto">
+                        <span>Requested&nbsp;{xvs.token}</span>
+                    </p>
+                    <p class="text-sm md:text-base">{xvs.requested}&nbsp;{xvs.token}</p>
+                </div>
+
+                <div class="flex flex-row items-center justify-between w-full">
+                    <p class="text-[#8fa5ad] text-sm md:text-base flex flex-row items-center gap-x-2">
+                        <span>Locking period</span>
+                    </p>
+                    <p class="text-sm md:text-base">{xvs.locking_period}</p>
+                </div>
+
+                <!--Proceed withdraw button-->
+                <button class="bg-[#2d3549] py-2 w-full rounded-lg mt-2">
+                    <p class="text-[#9eafca] text-md font-semibold">Enter a valid amount to request</p>
+                </button>
+
+                <a href="/" target="_blank" class="flex flex-row gap-x-2 items-center justify-center w-full text-[#3a78ff] text-xs hover:underline">Withdrawal request list</a>
+            {/if}
+        {:else if modalTitle === 'Withdraw VAI'}
+            <div class="relative flex w-full h-14 items-center justify-between rounded-lg border border-white/5 bg-[#181d27] px-2 mt-4">
+                <div class="flex flex-row gap-x-2">
+                    <img src={vai.img} alt="img" class="w-8 h-auto">
+                </div>
+                <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="withdrawInput" on:input={handleInput} bind:value={withdrawInput}/>
+
+                <div class="flex flex-row gap-x-2 h-[40px]">
+                    <button class="w-auto h-auto bg-[#2d3549] hover:bg-[#4c5670] py-2 px-3 rounded-lg flex items-center justify-center text-[#a1b2ca] whitespace-nowrap">
+                        MAX
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex flex-row items-center justify-between w-full mt-2">
+                <p class="text-[#8fa5ad] text-sm md:text-base flex flex-row items-center gap-x-2">
+                    <img src={vai.img} alt="img" class="w-5 h-auto">
+                    <span>Available&nbsp;{vai.token}</span>
+                </p>
+                <p class="text-sm md:text-base">{vai.available}&nbsp;{vai.token}</p>
+            </div>
+
+             <!--Proceed withdraw button-->
+             <button class="bg-[#2d3549] py-2 w-full rounded-lg mt-2">
+                <p class="text-[#9eafca] text-md font-semibold">Enter a valid amount to withdraw</p>
+            </button>
+        {/if}
     </div>
 </Modal>
