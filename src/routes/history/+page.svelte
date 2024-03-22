@@ -56,14 +56,14 @@
 		<!-- Native Table Element -->
 		<table class="table !bg-[#1e2431] !rounded-t-none">
 			<thead class="!bg-[#1e2431]">
-				<tr>
-					<th class="text-left">Type</th>
-					<th class="text-left">Hash</th>
-					<th class="text-left">Block</th>
-                    <th class="text-left">From</th>
-					<th class="text-left">To</th>
-					<th class="text-left">Amount</th>
-                    <th class="text-left">Created</th>
+				<tr class="text-gray-300">
+					<th class="text-left !text-sm !font-normal">Type</th>
+					<th class="text-left !text-sm !font-normal">Hash</th>
+					<th class="text-left !text-sm !font-normal">Block</th>
+                    <th class="text-left !text-sm !font-normal">From</th>
+					<th class="text-left !text-sm !font-normal">To</th>
+					<th class="text-left !text-sm !font-normal">Amount</th>
+                    <th class="text-left !text-sm !font-normal">Created</th>
 				</tr>
 			</thead>
 			<tbody class="!bg-[#1e2431]">

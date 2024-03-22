@@ -104,12 +104,12 @@
 		<!-- Native Table Element -->
 		<table class="table !bg-[#1e2431]">
 			<thead class="!bg-[#1e2431]">
-				<tr class="!bg-[#1e2431]">
-					<th class="w-[200px]">Asset</th>
-                    <th class="text-right">Pool</th>
-					<th class="text-right">Total supply</th>
-                    <th class="text-right">Total borrow</th>
-					<th class="text-right">Liquidity</th>
+				<tr class="!bg-[#1e2431] text-gray-300">
+					<th class="w-[200px] !text-sm !font-normal">Asset</th>
+                    <th class="text-right !text-sm !font-normal">Pool</th>
+					<th class="text-right !text-sm !font-normal">Total supply</th>
+                    <th class="text-right !text-sm !font-normal">Total borrow</th>
+					<th class="text-right !text-sm !font-normal">Liquidity</th>
 				</tr>
 			</thead>
 			<tbody class="!bg-[#1e2431]">

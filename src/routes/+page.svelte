@@ -72,13 +72,13 @@
 		<!-- Native Table Element -->
 		<table class="table !bg-[#1e2431]">
 			<thead class="!bg-[#1e2431]">
-				<tr>
-					<th>Asset</th>
-					<th class="text-right">Pool</th>
-					<th class="text-right">Wallet</th>
-					<th class="text-right">Supply APY / LTV</th>
-					<th class="text-right">Borrow APY</th>
-					<th class="text-right">Liquidity</th>
+				<tr class="text-gray-300">
+					<th class="!text-sm !font-normal">Asset</th>
+					<th class="text-right !text-sm !font-normal">Pool</th>
+					<th class="text-right !text-sm !font-normal">Wallet</th>
+					<th class="text-right !text-sm !font-normal">Supply APY / LTV</th>
+					<th class="text-right !text-sm !font-normal">Borrow APY</th>
+					<th class="text-right !text-sm !font-normal">Liquidity</th>
 				</tr>
 			</thead>
 			<tbody class="!bg-[#1e2431]">
