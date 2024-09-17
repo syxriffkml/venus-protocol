@@ -45,8 +45,8 @@
 <div use:setCurrentPage class="bg-[#1e2431] h-full flex flex-col gap-y-12">
 
     <button class="flex items-center justify-center w-full pt-8" on:click={(()=>{ window.location.href = '/' })}>
-        <img src="https://app.venus.io/assets/venusLogoWithText-998abf9a.svg" alt="img" class="h-9 hidden xl:block">
-        <img src="https://app.venus.io/assets/venusLogo-ccf6fbc9.svg" alt="Venus logo" class="h-9 block xl:hidden">
+        <img src="assets/img/logo/desktop-logo.png" alt="img" class="h-9 hidden xl:block">
+        <img src="assets/img/logo/mobile-logo.svg" alt="Venus logo" class="h-9 block xl:hidden">
     </button>
 
     <div class="w-full overflow-y-auto flex flex-col items-center xl:flex-none" style="height: calc(100vh - 116px);">

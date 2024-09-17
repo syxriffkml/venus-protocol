@@ -48,9 +48,9 @@
 
     //Chain data
     let chainData = [
-		{ header: 'BNB Chain', img: "https://app.venus.io/assets/bnb-8cd7030f.svg", info: 0 },
-        { header: 'Ethereum', img: "https://app.venus.io/assets/eth-ffd84278.svg", info: 0  },
-        { header: 'opBNB', img: "https://app.venus.io/assets/opbnb-d7900a03.svg", info: 0  },
+		{ header: 'BNB Chain', img: "assets/img/chain/bnb.svg", info: 0 },
+        { header: 'Ethereum', img: "assets/img/chain/eth.svg", info: 0  },
+        { header: 'opBNB', img: "assets/img/chain/opbnb.svg", info: 0  },
 	];
 
     //Chain Dropdown declaration
@@ -64,7 +64,7 @@
     <!--Mobile View-->
     <div class="md:hidden flex items-center justify-center h-full">
         <button on:click={(()=>{ window.location.href = '/' })}>
-            <img src="https://app.venus.io/assets/venusLogo-ccf6fbc9.svg" alt="Venus logo" >
+            <img src="assets/img/logo/mobile-logo.svg" alt="Venus logo" >
         </button>
     </div>
     <!--End of Mobile View-->
