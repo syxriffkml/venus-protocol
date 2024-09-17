@@ -71,7 +71,7 @@
                     <!--Borrow Input-->
                     <div class="relative flex w-full h-14 items-center justify-between rounded-lg border border-white/5 bg-[#181d27] px-2">
                         <div class="flex flex-row gap-x-2">
-                            <img src="https://app.venus.io/assets/vai-4ecaa030.svg" alt="img" class="w-8 h-auto">
+                            <img src="assets/img/coins/vai.svg" alt="img" class="w-8 h-auto">
                         </div>
                         <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="borrowInput" on:input={handleInput} bind:value={borrowInput}/>
 
@@ -89,7 +89,7 @@
 
                     <div class="flex flex-row items-center justify-between w-full">
                         <p class="text-[#8fa5ad] text-sm md:text-base flex flex-row items-center gap-x-2">
-                            <img src="https://app.venus.io/assets/vai-4ecaa030.svg" alt="img" class="w-5 h-auto">
+                            <img src="assets/img/coins/vai.svg" alt="img" class="w-5 h-auto">
                             Borrow APR
                         </p>
                         <p class="text-sm md:text-base">{borrow.borrow_apr}</p>
@@ -137,7 +137,7 @@
                     <!--Repay Input-->
                     <div class="relative flex w-full h-14 items-center justify-between rounded-lg border border-white/5 bg-[#181d27] px-2 mt-8">
                         <div class="flex flex-row gap-x-2">
-                            <img src="https://app.venus.io/assets/vai-4ecaa030.svg" alt="img" class="w-8 h-auto">
+                            <img src="assets/img/coins/vai.svg" alt="img" class="w-8 h-auto">
                         </div>
                         <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="repayInput" on:input={handleInput} bind:value={repayInput}/>
 
@@ -155,7 +155,7 @@
 
                     <div class="flex flex-row items-center justify-between w-full">
                         <p class="text-[#8fa5ad] text-sm md:text-base flex flex-row items-center gap-x-2">
-                            <img src="https://app.venus.io/assets/vai-4ecaa030.svg" alt="img" class="w-5 h-auto">
+                            <img src="assets/img/coins/vai.svg" alt="img" class="w-5 h-auto">
                             Borrow APR
                         </p>
                         <p class="text-sm md:text-base">{repay.borrow_apr}</p>

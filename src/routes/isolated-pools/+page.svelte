@@ -7,41 +7,41 @@
 	let isolated_pool = [
 		{ pool:'GameFi', total_supply:'$120.90M', total_borrow:'$10.97M', liquidity:'$11.68M',
             img:[
-                'https://app.venus.io/assets/usdc-ae6ed32b.svg',
-                'https://app.venus.io/assets/raca-e6ba6596.png',
-                'https://app.venus.io/assets/floki-1bb0894a.svg',
-                'https://app.venus.io/assets/usdt-68774da1.svg'
+                'assets/img/coins/usdc.svg',
+                'assets/img/coins/raca.png',
+                'assets/img/coins/floki.png',
+                'assets/img/coins/usdt.svg'
             ],
         },
 		{ pool:'DeFi', total_supply:'$20.90M', total_borrow:'$18.97M', liquidity:'$1.60M',
             img:[
-                'https://app.venus.io/assets/ankrBNB-57247e90.svg',
-                'https://app.venus.io/assets/bsw-378a0dd1.svg',
-                'https://app.venus.io/assets/alpaca-3d1836fb.png',
-                'https://app.venus.io/assets/usdt-68774da1.svg',
-                'https://app.venus.io/assets/twt-5a3293b4.svg',
+                'assets/img/coins/ankrBNB.svg',
+                'assets/img/coins/bsw.svg',
+                'assets/img/coins/alpaca.png',
+                'assets/img/coins/usdt.svg',
+                'assets/img/coins/twt.svg',
 
-                'https://app.venus.io/assets/twt-5a3293b4.svg',
-                'https://app.venus.io/assets/twt-5a3293b4.svg',
+                'assets/img/coins/twt.svg',
+                'assets/img/coins/twt.svg',
             ]
         },
 		{ pool:'Liquid Staked BNB', total_supply:'$320.90M', total_borrow:'$28.97M', liquidity:'$16.08M',
             img:[
-                'https://app.venus.io/assets/bsw-378a0dd1.svg',
-                'https://app.venus.io/assets/usdc-ae6ed32b.svg'
+                'assets/img/coins/bsw.svg',
+                'assets/img/coins/usdc.svg'
             ]
         },
 		{ pool:'Tron', total_supply:'$10.00M', total_borrow:'$31.93M', liquidity:'$23.68M',
             img:[
-                'https://app.venus.io/assets/wbnb-e73b2dde.svg',
-                'https://app.venus.io/assets/usdt-68774da1.svg',
-                'https://app.venus.io/assets/floki-1bb0894a.svg',
+                'assets/img/coins/wbnb.svg',
+                'assets/img/coins/usdt.svg',
+                'assets/img/coins/floki.png',
             ]
         },
 		{ pool:'Stablecoins', total_supply:'$1.90M', total_borrow:'$11.91M', liquidity:'$18.30M',
             img:[
-                'https://app.venus.io/assets/trx-025f5595.svg',
-                'https://app.venus.io/assets/usdt-68774da1.svg',
+                'assets/img/coins/trx.svg',
+                'assets/img/coins/usdt.svg',
             ]
         },
 	];

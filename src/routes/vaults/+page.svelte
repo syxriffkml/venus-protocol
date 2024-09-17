@@ -7,7 +7,7 @@
     let vaults = [
         { 
             token: 'XVS', 
-            img: 'https://app.venus.io/assets/xvs-e7b82352.svg',
+            img: 'assets/img/coins/xvs.svg',
             staked: '0', 
             apr: '8.3%', 
             daily_emission: '1.62K', 
@@ -15,7 +15,7 @@
         },
         { 
             token: 'VAI', 
-            img: 'https://app.venus.io/assets/vai-4ecaa030.svg',
+            img: 'assets/img/coins/vai.svg',
             staked: '0', 
             apr: '19.97%', 
             daily_emission: '125.000064', 
@@ -23,9 +23,9 @@
         }
     ];
 
-    let xvs =  { token: 'XVS', img: 'https://app.venus.io/assets/xvs-e7b82352.svg', available: '0', requested:'0', locking_period:'7 days' };
+    let xvs =  { token: 'XVS', img: 'assets/img/coins/xvs.svg', available: '0', requested:'0', locking_period:'7 days' };
     
-    let vai =  { token: 'VAI', img: 'https://app.venus.io/assets/vai-4ecaa030.svg', available: '0',  };
+    let vai =  { token: 'VAI', img: 'assets/img/coins/vai.svg', available: '0',  };
 
     //Modal declaration
     let stakeModal: Modal;
@@ -103,7 +103,7 @@
                 <div class="flex flex-row sm:flex-col gap-y-2 items-center sm:items-start justify-between w-full sm:w-auto">
                     <p class="text-[#98abca] text-sm">Daily Emission</p>
                     <p class="text-sm sm:text-xl font-semibold sm:font-bold flex flex-row items-center gap-x-1">
-                        <img src="https://app.venus.io/assets/xvs-e7b82352.svg" alt="img">
+                        <img src="assets/img/coins/xvs.svg" alt="img">
                         <span>{vaults[0].daily_emission}</span>
                     </p>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="flex flex-row sm:flex-col gap-y-2 items-center sm:items-start justify-between w-full sm:w-auto">
                     <p class="text-[#98abca] text-sm">Daily Emission</p>
                     <p class="text-sm sm:text-xl font-semibold sm:font-bold flex flex-row items-center gap-x-1">
-                        <img src="https://app.venus.io/assets/xvs-e7b82352.svg" alt="img">
+                        <img src="assets/img/coins/xvs.svg" alt="img">
                         <span>{vaults[1].daily_emission}</span>
                     </p>
                 </div>

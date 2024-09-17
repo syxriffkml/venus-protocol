@@ -5,27 +5,27 @@
     import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
 
     let fromData = [
-		{ header: 'BNB',     img: "https://app.venus.io/assets/bnb-8cd7030f.svg",     info: 0 },
-		{ header: 'USDC',    img: "https://app.venus.io/assets/usdc-ae6ed32b.svg",    info: 0  },
-		{ header: 'USDT',    img: "https://app.venus.io/assets/usdt-68774da1.svg",    info: 0  },
-        { header: 'XVS',     img: "https://app.venus.io/assets/xvs-e7b82352.svg",     info: 0  },
-        { header: 'ankrBNB', img: "https://app.venus.io/assets/ankrBNB-57247e90.svg", info: 0  },
-        { header: 'slisBNB', img: "https://app.venus.io/assets/slisBNB-96761da9.png", info: 0  },
-        { header: 'TUSD',    img: "https://app.venus.io/assets/tusd-e00ef2f1.svg",    info: 0  },
-        { header: 'ETH',     img: "https://app.venus.io/assets/eth-ffd84278.svg",     info: 0  },
-        { header: 'MATIC',   img: "https://app.venus.io/assets/matic-58a9a812.svg",   info: 0  },
+		{ header: 'BNB',     img: "assets/img/chain/bnb.svg",     info: 0 },
+		{ header: 'USDC',    img: "assets/img/coins/usdc.svg",    info: 0  },
+		{ header: 'USDT',    img: "assets/img/coins/usdt.svg",    info: 0  },
+        { header: 'XVS',     img: "assets/img/coins/xvs.svg",     info: 0  },
+        { header: 'ankrBNB', img: "assets/img/coins/ankrBNB.svg", info: 0  },
+        { header: 'slisBNB', img: "assets/img/coins/slisBNB.png", info: 0  },
+        { header: 'TUSD',    img: "assets/img/coins/tusd.svg",    info: 0  },
+        { header: 'ETH',     img: "assets/img/coins/eth.svg",     info: 0  },
+        { header: 'MATIC',   img: "assets/img/coins/matic.svg",   info: 0  },
 	];
 
     let toData = [
-		{ header: 'BNB',     img: "https://app.venus.io/assets/bnb-8cd7030f.svg",     info: 0 },
-		{ header: 'USDC',    img: "https://app.venus.io/assets/usdc-ae6ed32b.svg",    info: 0  },
-		{ header: 'USDT',    img: "https://app.venus.io/assets/usdt-68774da1.svg",    info: 0  },
-        { header: 'XVS',     img: "https://app.venus.io/assets/xvs-e7b82352.svg",     info: 0  },
-        { header: 'ankrBNB', img: "https://app.venus.io/assets/ankrBNB-57247e90.svg", info: 0  },
-        { header: 'slisBNB', img: "https://app.venus.io/assets/slisBNB-96761da9.png", info: 0  },
-        { header: 'TUSD',    img: "https://app.venus.io/assets/tusd-e00ef2f1.svg",    info: 0  },
-        { header: 'ETH',     img: "https://app.venus.io/assets/eth-ffd84278.svg",     info: 0  },
-        { header: 'MATIC',   img: "https://app.venus.io/assets/matic-58a9a812.svg",   info: 0  },
+		{ header: 'BNB',     img: "assets/img/chain/bnb.svg",     info: 0 },
+		{ header: 'USDC',    img: "assets/img/coins/usdc.svg",    info: 0  },
+		{ header: 'USDT',    img: "assets/img/coins/usdt.svg",    info: 0  },
+        { header: 'XVS',     img: "assets/img/coins/xvs.svg",     info: 0  },
+        { header: 'ankrBNB', img: "assets/img/coins/ankrBNB.svg", info: 0  },
+        { header: 'slisBNB', img: "assets/img/coins/slisBNB.png", info: 0  },
+        { header: 'TUSD',    img: "assets/img/coins/tusd.svg",    info: 0  },
+        { header: 'ETH',     img: "assets/img/coins/eth.svg",     info: 0  },
+        { header: 'MATIC',   img: "assets/img/coins/matic.svg",   info: 0  },
 	];
 
     //Search input

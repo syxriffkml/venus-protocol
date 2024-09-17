@@ -5,11 +5,11 @@
 
 
 	let core_pool = [
-		{ asset:'USDC', img:'https://app.venus.io/assets/usdc-ae6ed32b.svg', total_supply:'120.90M USDC', supply_apy:'18.56%', total_borrow:'10.97M USDC', borrow_apy:'22.35%', liquidity:'11.68M USDC', price:'$0.999939'},
-		{ asset:'USDT', img:'https://app.venus.io/assets/usdt-68774da1.svg', total_supply:'20.90M USDT', supply_apy:'68.56%', total_borrow:'18.97M USDT', borrow_apy:'20.00%', liquidity:'1.60M USDT', price:'$1.000075'},
-		{ asset:'BSW', img:'https://app.venus.io/assets/bsw-378a0dd1.svg', total_supply:'320.90M BSW', supply_apy:'28.16%', total_borrow:'28.97M BSW', borrow_apy:'4.60%', liquidity:'16.08M BSW', price:'$31.02'},
-		{ asset:'WBNB', img:'https://app.venus.io/assets/wbnb-e73b2dde.svg', total_supply:'10.00M WBNB', supply_apy:'10.00%', total_borrow:'31.93M WBNB', borrow_apy:'2.35%', liquidity:'23.68M WBNB', price:'$0.999101'},
-		{ asset:'TRX', img:'https://app.venus.io/assets/trx-025f5595.svg', total_supply:'1.90M TRX', supply_apy:'11.06%', total_borrow:'11.91M TRX', borrow_apy:'2.00%', liquidity:'18.30M TRX', price:'$10.817338'},
+		{ asset:'USDC', img:'assets/img/coins/usdc.svg', total_supply:'120.90M USDC', supply_apy:'18.56%', total_borrow:'10.97M USDC', borrow_apy:'22.35%', liquidity:'11.68M USDC', price:'$0.999939'},
+		{ asset:'USDT', img:'assets/img/coins/usdt.svg', total_supply:'20.90M USDT', supply_apy:'68.56%', total_borrow:'18.97M USDT', borrow_apy:'20.00%', liquidity:'1.60M USDT', price:'$1.000075'},
+		{ asset:'BSW', img:'assets/img/coins/bsw.svg', total_supply:'320.90M BSW', supply_apy:'28.16%', total_borrow:'28.97M BSW', borrow_apy:'4.60%', liquidity:'16.08M BSW', price:'$31.02'},
+		{ asset:'WBNB', img:'assets/img/coins/wbnb.svg', total_supply:'10.00M WBNB', supply_apy:'10.00%', total_borrow:'31.93M WBNB', borrow_apy:'2.35%', liquidity:'23.68M WBNB', price:'$0.999101'},
+		{ asset:'TRX', img:'assets/img/coins/trx.svg', total_supply:'1.90M TRX', supply_apy:'11.06%', total_borrow:'11.91M TRX', borrow_apy:'2.00%', liquidity:'18.30M TRX', price:'$10.817338'},
 	];
 
     let core_pool_info = { total_supply: '$2.64B', total_borrow: '$1.01B', available_liquidity: '$1.63B', assets: '30' };

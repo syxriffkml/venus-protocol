@@ -7,15 +7,15 @@
 
 
 	let history = [
-		{ type:'Mint', img:'https://app.venus.io/assets/usdc-ae6ed32b.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070855', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'9.27', created:'23 seconds ago'},
-		{ type:'Transfer', img:'https://app.venus.io/assets/usdt-68774da1.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'42 seconds ago'},
-		{ type:'Borrow', img:'https://app.venus.io/assets/bsw-378a0dd1.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070849', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'0x5d287C5760bD668892981C16BB9556c10Ccf696B', amount:'23.21K', created:'1 minutes ago'},
-		{ type:'Repay Borrow', img:'https://app.venus.io/assets/wbnb-e73b2dde.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070849', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'71.57', created:'2 minutes ago'},
-		{ type:'Redeem', img:'https://app.venus.io/assets/trx-025f5595.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070847', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'0x0F89DeF402B8Ffa30eC805BeA36216876cC3E318', amount:'178.93', created:'2 minutes ago'},
-        { type:'Approval', img:'https://app.venus.io/assets/usdt-68774da1.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
-        { type:'Mint', img:'https://app.venus.io/assets/usdt-68774da1.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
-        { type:'Redeem', img:'https://app.venus.io/assets/usdt-68774da1.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
-        { type:'Redeem', img:'https://app.venus.io/assets/usdt-68774da1.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
+		{ type:'Mint', img:'assets/img/coins/usdc.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070855', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'9.27', created:'23 seconds ago'},
+		{ type:'Transfer', img:'assets/img/coins/usdt.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'42 seconds ago'},
+		{ type:'Borrow', img:'assets/img/coins/bsw.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070849', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'0x5d287C5760bD668892981C16BB9556c10Ccf696B', amount:'23.21K', created:'1 minutes ago'},
+		{ type:'Repay Borrow', img:'assets/img/coins/wbnb.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070849', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'71.57', created:'2 minutes ago'},
+		{ type:'Redeem', img:'assets/img/coins/trx.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070847', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'0x0F89DeF402B8Ffa30eC805BeA36216876cC3E318', amount:'178.93', created:'2 minutes ago'},
+        { type:'Approval', img:'assets/img/coins/usdt.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
+        { type:'Mint', img:'assets/img/coins/usdt.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
+        { type:'Redeem', img:'assets/img/coins/usdt.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
+        { type:'Redeem', img:'assets/img/coins/usdt.svg', hash:'0xB580d7501F2f118A2667aBc75ef020bdAc313DCf', block:'37070853', from:'0xecA88125a5ADbe82614ffC12D0DB554E2e2867C8', to:'', amount:'24.81', created:'7 days ago'},
 	];
 
     let selectedType = 'All';

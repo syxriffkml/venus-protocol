@@ -90,7 +90,7 @@
             <div class="flex flex-col items-start">
                 <p class="text-[#a2acc5] font-semibold">Total locked</p>
                 <div class="text-2xl font-semibold flex flex-row items-center gap-x-2">
-                    <img src="https://app.venus.io/assets/xvs-e7b82352.svg" alt="img" class=""/>
+                    <img src="assets/img/coins/xvs.svg" alt="img" class=""/>
                     <p>0</p>
                 </div>
             </div>

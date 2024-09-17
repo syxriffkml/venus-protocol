@@ -17,12 +17,12 @@
 
 
     let fromData = [
-		{ header: 'BNB Chain', img: "https://app.venus.io/assets/bnb-8cd7030f.svg", info: 0 },
+		{ header: 'BNB Chain', img: "assets/img/chain/bnb.svg", info: 0 },
 	];
 
     let toData = [
-        { header: 'Ethereum', img: "https://app.venus.io/assets/eth-ffd84278.svg", info: 0  },
-        { header: 'opBNB', img: "https://app.venus.io/assets/opbnb-d7900a03.svg", info: 0  },
+        { header: 'Ethereum', img: "assets/img/chain/eth.svg", info: 0  },
+        { header: 'opBNB', img: "assets/img/chain/opbnb.svg", info: 0  },
 
 	];
 
@@ -136,7 +136,7 @@
                     <p class="text-[#98abca] text-sm font-semibold">Amount</p>
                     <div class="relative flex w-full h-14 items-center justify-between rounded-lg border border-white/5 bg-[#181d27] px-2">
                         <div class="flex flex-row gap-x-2">
-                            <img src="https://app.venus.io/assets/xvs-e7b82352.svg" alt="img" class="w-8 h-auto">
+                            <img src="assets/img/coins/xvs.svg" alt="img" class="w-8 h-auto">
                         </div>
                         <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="bridgeInput" on:input={handleInput} bind:value={bridgeInput}/>
 

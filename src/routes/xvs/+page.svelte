@@ -6,14 +6,14 @@
 
 
 	let xvs = [
-		{ asset:'USDC', img:'https://app.venus.io/assets/usdc-ae6ed32b.svg', per_day:'93.74', supply:'0.03%', borrow:'-'},
-		{ asset:'USDT', img:'https://app.venus.io/assets/usdt-68774da1.svg', per_day:'93.74', supply:'0.03%', borrow:'0.86%'},
-		{ asset:'BSW', img:'https://app.venus.io/assets/bsw-378a0dd1.svg', per_day:'46.87', supply:'0.07%', borrow:'0.55%'},
-		{ asset:'WBNB', img:'https://app.venus.io/assets/wbnb-e73b2dde.svg', per_day:'39.062', supply:'0.15%', borrow:'0.1%'},
-		{ asset:'TRX', img:'https://app.venus.io/assets/trx-025f5595.svg', per_day:'4.68', supply:'0.3%', borrow:'0.08%'},
+		{ asset:'USDC', img:'assets/img/coins/usdc.svg', per_day:'93.74', supply:'0.03%', borrow:'-'},
+		{ asset:'USDT', img:'assets/img/coins/usdt.svg', per_day:'93.74', supply:'0.03%', borrow:'0.86%'},
+		{ asset:'BSW', img:'assets/img/coins/bsw.svg', per_day:'46.87', supply:'0.07%', borrow:'0.55%'},
+		{ asset:'WBNB', img:'assets/img/coins/wbnb.svg', per_day:'39.062', supply:'0.15%', borrow:'0.1%'},
+		{ asset:'TRX', img:'assets/img/coins/trx.svg', per_day:'4.68', supply:'0.3%', borrow:'0.08%'},
 	];
 
-    let xvs_info = { img:'https://app.venus.io/assets/xvs-e7b82352.svg', address: '0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63', daily_distribution: '498.94', remaaining: '14.16M'};
+    let xvs_info = { img:'assets/img/coins/xvs.svg', address: '0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63', daily_distribution: '498.94', remaaining: '14.16M'};
     let slicedAddress = xvs_info.address.slice(0, 4) + '...' + xvs_info.address.slice(-4);
 
     let copyState: boolean = false;
