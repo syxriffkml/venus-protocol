@@ -26,7 +26,7 @@
 
 	];
 
-    //Search input
+    //Search input filter
     let searchFrom: String = '';
     $: filteredFromData = fromData.filter(item => item.header.toLowerCase().includes(searchFrom.toLowerCase()));
 
